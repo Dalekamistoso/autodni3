@@ -1,4 +1,9 @@
-﻿; Instalador de requisitos DNI Electronico 3.0 para Windows por DrWh0
+﻿#NoTrayIcon
+#RequireAdmin
+#Region ;**** Directives created by AutoIt3Wrapper_GUI ****
+#AutoIt3Wrapper_UseUpx=y
+#EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
+; Instalador de requisitos DNI Electronico 3.0 para Windows por DrWh0
 
 ; Aqui fuerzo los permisos administrativos
 
@@ -12,13 +17,13 @@
 
 If @OSArch ="X64" Then
 
-	RunWait('dnie_x64.exe /la /s /v /qn')
+	RunWait('msiexec /i "DNIe_x64.msi" /quiet')
 	RunWait('fnmt_x64.exe /S /v /qn')
 
 
 ElseIf @OSArch ="X86" Then
 
-	RunWait('dnie_x64.exe /la /s /v /qn')
+	RunWait('msiexec /i "DNIe_x86.msi" /quiet')
 	RunWait('fnmt_x86.exe /S /v /qn')
 
 	EndIf
